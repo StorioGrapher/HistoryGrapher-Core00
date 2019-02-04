@@ -27,11 +27,13 @@ data ValueTyper = ValueTyper
 
 type ValueTable = IntMap ValueRow
 type ControlTable = IntMap ControlRow
+type TimeSpan = Maybe (Time,Time)
 
 -- No Branch World yet
 data WorldState = WorldState
   { valueTable   :: ValueTable
   , controlTable :: ControlTable
+  , evaluatedSpan  :: TimeSpan
   } deriving Show
 
 type Values = IntMap Value
