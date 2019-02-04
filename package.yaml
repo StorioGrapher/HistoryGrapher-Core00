@@ -1,0 +1,51 @@
+name:                HistoryGrapher-Core00
+version:             0.0.0.1
+github:              "MiRiS-Project/HistoryGrapher-Core00"
+license:             OtherLicense
+author:              "MiRiS Project"
+maintainer:          "developer@miris-project.net"
+copyright:           "2018 MiRiS Project"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/MiRiS-Project/HistoryGrapher-Core00#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers >= 0.6
+
+library:
+  source-dirs: src
+
+executables:
+  HGC00-Monitor:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HistoryGrapher-Core00
+
+tests:
+  Main-Test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    default-extensions:
+    - TemplateHaskell
+    dependencies:
+    - HistoryGrapher-Core00
+    - HUnit
+    - QuickCheck
+    - silently
+    - test-framework
+    - test-framework-hunit
+    - test-framework-quickcheck2
+    - test-framework-th
