@@ -14,7 +14,7 @@ data World = World
 type Controllers = IntMap Control
 
 data Controller = Controller
-  { controlMap   :: IntMap Control
+  { controlMap   :: Controllers
   } deriving Show
 
 type ValueTable = IntMap ValueRow
@@ -22,28 +22,32 @@ type ControlTable = IntMap ControlRow
 
 -- No Branch World yet
 data WorldState = WorldState
-  { valueTable   :: IntMap ValueRow
-  , controlTable :: IntMap ControlRow
+  { valueTable   :: ValueTable
+  , controlTable :: ControlTable
   } deriving Show
+
+type Values = IntMap Value
 
 data ValueRow = ValueRow
   { valueRowTime :: Time
-  , values       :: IntMap Value
+  , values       :: Values
   } deriving Show
+
+type Controls = IntMap Control
 
 data ControlRow = ControlRow
   { controlRowTime :: Time
-  , controls       :: IntMap Control
+  , controls       :: Controls
   } deriving Show
 
-data Control = Control
-  { controlName :: Name
-  , controlID   :: ID
-  , controlF    :: WorldState -> WorldState
-  }
+data Control
+  = Control
+    { controlName :: Name
+    , controlF    :: World -> World
+    }
 
 instance Show Control where
-  show c = "Control(" ++ show (controlID c) ++ "): " ++ (controlName c)
+  show (Control name _)     = "Ctrl: " ++ name
 
 data Value
   = IntValue { iV :: Int }
