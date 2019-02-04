@@ -8,6 +8,7 @@ type ID = Int
 
 data World = World
   { controller :: Controller
+  , valueList  :: ValueList
   , state      :: WorldState
   } deriving Show
 
@@ -16,6 +17,13 @@ type Controllers = IntMap Control
 data Controller = Controller
   { controlMap   :: Controllers
   } deriving Show
+
+type ValueList = IntMap ValueTyper
+
+data ValueTyper = ValueTyper
+  { valueTyperName :: Name
+  , valueType :: ValueType
+  } deriving (Show, Eq)
 
 type ValueTable = IntMap ValueRow
 type ControlTable = IntMap ControlRow
@@ -53,3 +61,8 @@ data Value
   = IntValue { iV :: Int }
   | StrValue { sV :: String }
   deriving (Show, Eq)
+
+data ValueType
+  = VTInt
+  | VTStr
+  deriving (Show, Eq, Ord, Enum)
