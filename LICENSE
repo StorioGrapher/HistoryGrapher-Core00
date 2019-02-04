@@ -1,4 +1,5 @@
-HistoryGrapher-Core
+HistoryGrapher-Core License
+====
 
 Copyright (C) 2018-2019  MiRiS Project
 
@@ -6,7 +7,7 @@ We license this program as AGPL-3.0-or-later or Commercial license.
 We do not encourage to use this program for an disclosed software,
 but for an open source software.
 
-AGPL-3.0-or-later
+## AGPL-3.0-or-later
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
@@ -21,7 +22,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Commercial license
+## Commercial license
 
 You can be released from the requirements of the license by purchasing
 a commercial license. Buying such a license is mandatory as soon as you
