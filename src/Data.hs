@@ -68,3 +68,13 @@ data ValueType
   = VTInt
   | VTStr
   deriving (Show, Eq, Ord, Enum)
+
+-- # Condition
+-- * Edit only for current data
+data CERES
+  = InitValue ID Value
+  | SetValue  ID Value
+  | DeleteValue ID Value
+  | ModifyValue ID Modifier
+
+type Modifier = Value -> Value
