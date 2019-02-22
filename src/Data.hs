@@ -75,6 +75,11 @@ data CERES
   = InitValue ID Value
   | SetValue  ID Value
   | DeleteValue ID Value
-  | ModifyValue ID Modifier
+  | ModifyValue ID CERESArithmeticOperator
 
-type Modifier = Value -> Value
+data CERESArithmeticOperator
+  = CAOMul Int
+  | CAOAdd Int
+  | CAOSub Int
+  | CAODiv Int
+  | CAORem Int
