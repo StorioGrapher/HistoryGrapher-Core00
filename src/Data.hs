@@ -71,11 +71,16 @@ data ValueType
 
 -- # Condition
 -- * Edit only for current data
+
+type LocalID = ID
+
 data CERES
   = InitValue ID Value
   | SetValue  ID Value
   | DeleteValue ID Value
   | ModifyValue ID CERESArithmeticOperator
+  | CopyValue ID ID
+  | CopyLocal ID LocalID
 
 data CERESArithmeticOperator
   = CAOMul Int
