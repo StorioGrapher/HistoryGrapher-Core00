@@ -77,7 +77,7 @@ type LocalID = ID
 data CERES
   = InitValue ID Value
   | SetValue  ID Value
-  | DeleteValue ID Value
+  | DeleteValue ID
   | ModifyValue ID CERESArithmeticOperator
   | CopyValue ID ID
   | CopyLocal ID LocalID
