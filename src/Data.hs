@@ -87,4 +87,4 @@ data CERESArithmeticOperator
   | CAOAdd Int
   | CAOSub Int
   | CAODiv Int
-  | CAORem Int
+  | CAOMod Int
