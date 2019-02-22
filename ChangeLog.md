@@ -16,6 +16,10 @@
 ### Improve
 * Redesign for updating WorldState Parallelly
 
+## [0.0.1.0] - 2019-02-22
+### Added
+* Prototyping CERES-Minimal
+
 ## [0.0.0.1] - 2019-01-21
 ### Added
 * Prototyping data structures

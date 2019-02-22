@@ -1,10 +1,10 @@
 name:                HistoryGrapher-Core00
-version:             0.0.0.1
+version:             0.0.1.0
 github:              "MiRiS-Project/HistoryGrapher-Core00"
 license:             OtherLicense
 author:              "MiRiS Project"
 maintainer:          "developer@miris-project.net"
-copyright:           "2018 MiRiS Project"
+copyright:           "2018-2019 MiRiS Project"
 
 extra-source-files:
 - README.md
