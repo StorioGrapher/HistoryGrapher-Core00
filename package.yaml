@@ -3,7 +3,7 @@ version:             0.0.1.0
 github:              "MiRiS-Project/HistoryGrapher-Core00"
 license:             OtherLicense
 author:              "MiRiS Project"
-maintainer:          "developer@miris-project.net"
+maintainer:          "YongJoon Joe <developer@miris-project.net>"
 copyright:           "2018-2019 MiRiS Project"
 
 extra-source-files:
@@ -20,9 +20,27 @@ library:
   source-dirs: src
 
 executables:
-  HGC00-Monitor:
+  HGC00:
     main:                Main.hs
     source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HistoryGrapher-Core00
+  HGC00-Interpreter:
+    main:                Main.hs
+    source-dirs:         examples/Interpreter
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - HistoryGrapher-Core00
+  HGC00-Mover:
+    main:                Main.hs
+    source-dirs:         examples/Mover
     ghc-options:
     - -threaded
     - -rtsopts
