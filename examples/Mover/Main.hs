@@ -1,5 +1,7 @@
 module Main where
 
+import Control.Monad
+
 import Data.Foldable
 import Data.IntMap as IM
 import Data.HashMap.Strict as HM
@@ -26,7 +28,7 @@ main = do
   putStrLn "Start HistoryGrapher-Core00 Mover examples"
   putStrLn "  Purpose 01: Move event(spool) mover with the anchor system"
   putStrLn "    Scenario 01-01: Allocate Holiday which related with days of week or days of month"
-  printer . interpreter [setTheHoliday] $ blankData
+  printerWith (\x -> length x /= 4) . interpreter [setTheHoliday] $ blankData
   putStrLn "  Purpose 02: Evaluate values based on event"
   putStrLn "    Scenario 02-01: Evaluate monthly salary and bonus based on characters and events on month"
 
@@ -40,4 +42,5 @@ shower aRecord = yStr ++ mStr ++ dStr ++ " " ++ dowStr ++ " " ++ holidayStr
     dowStr = show . toEnum' $ aRecord HM.! keyDoW
     holidayStr = maybe "" show (HM.lookup keyIsHoliday aRecord)
 
-printer = mapM_ (putStrLn . shower)
+--printer = mapM_ (putStrLn . shower)
+printerWith condF = mapM_ (\x -> when (condF x) (putStrLn . shower $ x))
