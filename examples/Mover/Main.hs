@@ -40,7 +40,7 @@ shower aRecord = yStr ++ mStr ++ dStr ++ " " ++ dowStr ++ " " ++ holidayStr
     rawDStr = show . takeIV $ aRecord HM.! keyDay
     dStr = replicate (3 - length rawDStr) ' ' ++ rawDStr
     dowStr = show . toEnum' $ aRecord HM.! keyDoW
-    holidayStr = maybe "" show (HM.lookup keyIsHoliday aRecord)
+    holidayStr = maybe "" (show . takeBV) (HM.lookup keyIsHoliday aRecord)
 
 --printer = mapM_ (putStrLn . shower)
 printerWith condF = mapM_ (\x -> when (condF x) (putStrLn . shower $ x))

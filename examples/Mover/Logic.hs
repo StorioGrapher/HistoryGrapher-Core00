@@ -44,6 +44,15 @@ toEnum' :: Value -> DoW
 toEnum' (IV v) = toEnum v
 toEnum' v = error $ "[ERROR]<toEnum'>: Can't handle value like " ++ show v
 
+takeBV :: Value -> Bool
+takeBV (BV v) = v
+takeBV v = error $ "[ERROR]<takeBV>: Can't take Boolean value from " ++ show v
 takeIV :: Value -> Int
 takeIV (IV v) = v
 takeIV v = error $ "[ERROR]<takeIV>: Can't take Int value from " ++ show v
+takeDV :: Value -> Double
+takeDV (DV v) = v
+takeDV v = error $ "[ERROR]<takeDV>: Can't take Double value from " ++ show v
+takeSV :: Value -> String
+takeSV (SV v) = v
+takeSV v = error $ "[ERROR]<takeSV>: Can't take String value from " ++ show v
