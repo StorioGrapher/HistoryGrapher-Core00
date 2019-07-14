@@ -15,6 +15,9 @@ description:         Please see the README on GitHub at <https://github.com/MiRi
 dependencies:
 - base >= 4.7 && < 5
 - containers >= 0.6
+- unordered-containers
+- vector
+- text
 
 library:
   source-dirs: src
